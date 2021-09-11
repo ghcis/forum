@@ -8,6 +8,7 @@ class Thread(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL, verbose_name="用户", null=True
     )
+    pub_date = models.DateTimeField("发布日期", auto_now_add=True)
 
     def __str__(self) -> str:
         return str(self.title)
@@ -18,7 +19,7 @@ class Post(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL, verbose_name="用户", null=True
     )
-    pub_date = models.DateTimeField("发布日期")
+    pub_date = models.DateTimeField("发布日期", auto_now_add=True)
     relpy_to = models.ForeignKey(
         "self",
         on_delete=models.SET_NULL,
@@ -27,3 +28,5 @@ class Post(models.Model):
         null=True,
     )
     content = models.TextField("内容")
+    upvotes = models.IntegerField(default=0)
+    downvotes = models.IntegerField(default=0)
