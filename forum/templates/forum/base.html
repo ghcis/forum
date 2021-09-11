@@ -1,0 +1,24 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet" crossorigin="anonymous">
+
+    <title>{% block title %}GHCIS Forum{% endblock %}</title>
+
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    {% block content %}<h1>Welcome to GHCIS Forum!</h1>{% endblock %}
+
+    <!-- Optional JavaScript: Bootstrap Bundle with Popper -->
+    <script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}" crossorigin="anonymous"></script>
+
+    {% block script %}{% endblock %}
+  </body>
+</html>
