@@ -20,6 +20,10 @@ class Post(models.Model):
     )
     pub_date = models.DateTimeField("发布日期")
     relpy_to = models.ForeignKey(
-        "self", on_delete=models.SET_NULL, verbose_name="回复", blank=True, null=True
+        "self",
+        on_delete=models.SET_NULL,
+        verbose_name="回复",
+        blank=True,
+        null=True,
     )
     content = models.TextField("内容")
