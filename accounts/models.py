@@ -13,3 +13,6 @@ class Profile(models.Model):
     )
     bio = models.TextField("个人简介", null=True, blank=True)
     avatar = models.ImageField("头像", upload_to=avatar_directory_path)
+
+    def __str__(self) -> str:
+        return str(self.user)
