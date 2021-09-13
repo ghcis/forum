@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ["ghcis.piterator.com"]
 # Application definition
 
 INSTALLED_APPS = [
+    "accounts.apps.AccountsConfig",
     "forum.apps.ForumConfig",
     "uploads.apps.UploadsConfig",
     "django.contrib.admin",
